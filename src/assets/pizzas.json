@@ -1,0 +1,102 @@
+[
+    {
+      "id": 0,
+      "imageUrl": "https://cdn.dodostatic.net/static/Img/Products/b549211e80a74f27858af0f61129708a_1875x1875.png",
+      "title": "Пепперони Фреш с перцем",
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 803,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 1,
+      "imageUrl": "https://i5.photo.2gis.com/images/branch/63/8866461813574823_bc6b.jpg",
+      "title": "Сырная",
+      "types": [0],
+      "sizes": [26, 40],
+      "price": 245,
+      "category": 0,
+      "rating": 6
+    },
+    {
+      "id": 2,
+      "imageUrl": "https://yandex-images.clstorage.net/e5as0m185/3eb474mC/nGJlBa6Li_9rh-J4bOkonVf9S_9P0N-hOj_kPgLZLSvdqfmlY6aPaMxA0WVm0cTNLz0exR_-FZeH8KKVfDkJJu02UTUPWl7-XpbiLHid2BhDme8qe8Mcczwc951UO36Ialt7FrFWi405FbVkknXyWi4dWxEq64BwItJ1UHzbWIGf4haCKVwL_Jl38uks_EivRLtaLl4CbwBPjFa9VOhMKgjbuSWDxln8u0TEkLPEMfm6DftCyfnSsRCCJJEM-MuTTXB04Ppv-v57VvD6zX85XoS6Cp48Ah8Bzm4G3MRo_9hZqys0EtUJ_Msl1mDzFrKK-Y0pAwo4sfACU-fxPKk7Qy1y9nDKDds9mYRiS53vuq-0SjvOf9A_0JzulW7XS_4K-tloFwCVyazLpkaiwPbyOPptSEIpuYOxsLM14T0YKDM_A7awWz3IzMr24_vNTNosRgnYHGyizZB97gVPZPjOWZr7K0VR5EvOiiRkw2I1AvtazJkiWZqSIaBBhMOuCtnyz9HnkPtfWd9bVvAK3rxLDbZbaPzfsK1Srd6WnnYI_Gr5-sp0wzRJTbllFEMyxvA4-MyZIMprUMKAYEYzLfnLwMwBtEOqr2mvmNRhK88P6D_WOPp_fHMPwO79dA326f5ZiblpBbFlu4-I99YT4_cAirr_OFBYyTEA0KDmkx1oKZON0HVQq92bnolWECn9X6hfJNnqTvxiX5Hd3_au1Jlv6onrecbS1Xn8eFX2EtHUU4tpHhtTeYmxMvFhpBIdanmiz0EHQri-a6-LdIN4XX3Z7XT5Kqwecu5RrGwGfBRIDwmpSXt0kKe7vbkEhJJS16FbuuwI4Gq6QMGD86VBDIpJ4cyhVJCoH1qsSDbgGT5fCGyXaPqdrWKNoz9N5k7lG6_I6floFVHX-x0JNrajUgbRGyi8a5D6ueOCYEBHokyaCCDcgQcS2hz6nyi2ATsPr6hsRZopDN3yTrAfjSf_16gv8",
+      "title": "Цыпленок барбекю",
+      "types": [0],
+      "sizes": [26, 40],
+      "price": 295,
+      "category": 1,
+      "rating": 4
+    },
+    {
+      "id": 3,
+      "imageUrl": "https://yandex-images.clstorage.net/e5as0m185/3eb47433/LTIEIUpuWtrrRuNdrE3YrVaYLo-_YdsAKy-UKpNsGB-JHNxEBqJOvbxAgZVGIZS8Xz0etYrbQKenIIKAfFlcc80G9GA-qi7bDpOX_FkNWJ0GuftbjnAeoG7-MA9W-FjKfKz8V9BFCY_6pxfC4SYzSEoN64BLf_GzwYNjsGy4eRNNwdSS6J87XBoU4Kg_b-tuZts4jg-w_tE-PVYdtmhcSGmJGDdxZQlcyAV1QiMVAdiYfGnROovQAgIg96DM65oBHwDmwrleS3-JBjI6XQ04XZfZ2q8Nox9ST8yWHObYPkgZiJnVIQSZ3Hv3JDKxBJDLyHwZsCh7kNCBU7QgHqpZwHxB9BN6PnsuedZSON-dCD-2Gjh9nxJPwsw9puzXiH2aOVnLVbK2iv96JYdA8ieCiwgsGTO4uaMwweG3wH_rekFOAEbzqC56n2qmQEmfXZkPpetrDx6iH2GsvlSvNFpu6MsZKlUilzlMSnbnYrF10_qKTlixmtgB8zEiF2GuiwpiX5BWARkM6Y2bZ7Cbzn05bTT4-q8NUwyRPZ-k_YS63fqr2_plsUYrvHhFhGNQREEqiM1r8OpYUQDD4bVhromZk51zdiDb_Gp-iVWzS52uaJ0EiDktnHIdIp6txJ4WOX45CUm5RlPVq116dvQg8zUze3oPWmIoCIAxM1P3Ug_5CzH8sSbge1xa72sG8ppcvWnv9rkor-1wL3LezTZ_Bgj-KFkYimTRdokt68X0cuP2UMu4fKrACAmyEmBSJLMs-ipxfIMHITndWu07N7ALLq96jAaIKo1-IY9Qr39mX8bqHDjo2PvXIaRJ_Ism1NDhRBK5ej1rkXqJMRGSgvdBP0k5Qo1wdbM4jksNC3Sz6319ai03i-nPHUDscn7-hc4W268oiypo9sGWuK8r55Rg8iXTyTqd26NIuDHA4sJlEVw5qUEuM5YA2m0LHUq1o8su_xgul7iJT_xi3YLe_lc8xUrfs",
+      "title": "Кисло-сладкий цыпленок",
+      "types": [1],
+      "sizes": [26, 30, 40],
+      "price": 275,
+      "category": 2,
+      "rating": 2
+    },
+    {
+      "id": 4,
+      "imageUrl": "https://www.slivki.by/ximage/1662814439_mceclip4.png",
+      "title": "Чизбургер-пицца",
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 415,
+      "category": 3,
+      "rating": 8
+    },
+    {
+      "id": 5,
+      "imageUrl": "https://sun9-50.userapi.com/impg/c858320/v858320878/16807b/y6sGLqFSS_Q.jpg?size=584x584&quality=96&sign=25d048fd66e624782efd60ef4d39404c&type=album",
+      "title": "Крэйзи пепперони",
+      "types": [0],
+      "sizes": [30, 40],
+      "price": 580,
+      "category": 2,
+      "rating": 2
+    },
+    {
+      "id": 6,
+      "imageUrl": "https://avatars.mds.yandex.net/get-altay/934739/2a0000015f97c43530cffb00f0a46d93b2c7/XXL_height",
+      "title": "Пепперони",
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 675,
+      "category": 1,
+      "rating": 9
+    },
+    {
+      "id": 7,
+      "imageUrl": "https://avatars.mds.yandex.net/i?id=3c49ec962a7544e5b8c41518b9b92b98_l-5235538-images-thumbs&n=13",
+      "title": "Маргарита",
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 450,
+      "category": 4,
+      "rating": 10
+    },
+    {
+      "id": 8,
+      "imageUrl": "https://avatars.mds.yandex.net/i?id=c6f7bcac1e9a090c9fc75097072a2111627b0ea7-10996738-images-thumbs&n=13",
+      "title": "Четыре сезона",
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 395,
+      "category": 5,
+      "rating": 10
+    },
+    {
+      "id": 9,
+      "imageUrl": "https://sun9-20.userapi.com/impg/atwvXAbv79MyCj6vbNHUyffH-eUiSxX-7jz6Xg/nKSDfM4_6ts.jpg?size=807x807&quality=95&sign=dde1a811e7b1610e41d5d1206def7137&c_uniq_tag=DuJzVzUuJSJrxgtQRwtsivD_RjZZRVU0x06xpBmnOMc&type=album",
+      "title": "Овощи и грибы 🌱",
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 285,
+      "category": 5,
+      "rating": 7
+    }
+  ]
