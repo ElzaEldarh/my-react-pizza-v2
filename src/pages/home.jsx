@@ -2,13 +2,15 @@ import Categories from "../components/categories";
 import Sort from "../components/sort";
 import PizzaBlock from "../components/PizzaBlock/index";
 import Skeleton from "../components/PizzaBlock/skeleton";
-
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Pagination from "../components/Pagination";
+import { SearchContext } from "../App";
 
-const Home = ({ searchValue }) => {
+const Home = () => {
+  const { searchValue } = useContext(SearchContext);
+
   const [items, setItems] = useState([]);
-  const [currentPage, setCurrentPage]=useState(1)
+  const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
   const [categoryId, setCategoryId] = useState(0);
   const [sortType, setSortType] = useState({
@@ -25,7 +27,6 @@ const Home = ({ searchValue }) => {
         categoryId > 0 ? `&category=${categoryId}` : ""
       }&sortBy=${sortType.sortProperty}&order=desc${search}`
     )
-    
       .then((res) => res.json())
       .then((arr) => {
         setItems(arr);
@@ -40,12 +41,12 @@ const Home = ({ searchValue }) => {
   }, [categoryId, sortType, searchValue, currentPage]);
 
   const pizzas = Array.isArray(items)
-  ? items
-      .filter((obj) =>
-        obj.title.toLowerCase().includes(searchValue.toLowerCase())
-      )
-      .map((obj) => <PizzaBlock key={obj.id} {...obj} />)
-  : [];
+    ? items
+        .filter((obj) =>
+          obj.title.toLowerCase().includes(searchValue.toLowerCase())
+        )
+        .map((obj) => <PizzaBlock key={obj.id} {...obj} />)
+    : [];
   const skeletons = [...new Array(6)].map((_, index) => (
     <Skeleton key={index} />
   ));
@@ -61,7 +62,7 @@ const Home = ({ searchValue }) => {
       </div>
       <h2 className="content__title">Все пиццы</h2>
       <div className="content__items">{isLoading ? skeletons : pizzas} </div>
-      <Pagination onChangePage={number=> setCurrentPage(number)} />
+      <Pagination onChangePage={(number) => setCurrentPage(number)} />
     </div>
   );
 };
