@@ -4,12 +4,16 @@ import Cart from "./pages/cart";
 import NotFound from "./pages/notFound";
 import { Route, Routes } from "react-router-dom";
 import { useState, createContext } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import "./scss/app.scss";
 
 export const SearchContext = createContext();
 
 const App = () => {
   const [searchValue, setSearchValue] = useState("");
+
+
+
   return (
     <>
       <div className="wrapper">
