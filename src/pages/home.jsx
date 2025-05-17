@@ -71,7 +71,7 @@ const Home = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    if (isSearch.current) {
+    if (!isSearch.current) {
       fetchPizzas();
     }
     isSearch.current = false;
