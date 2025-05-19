@@ -90,13 +90,14 @@ const Home = () => {
   isMounted.current=true
   }, [categoryId, sort.sortProperty, currentPage]);
 
-  const pizzas = Array.isArray(items)
-    ? items
-        .filter((obj) =>
-          obj.title.toLowerCase().includes(searchValue.toLowerCase())
-        )
-        .map((obj) => <PizzaBlock key={obj.id} {...obj} />)
-    : "По вашему запросу ничего не нашлось ):";
+ const pizzas = Array.isArray(items)
+  ? items
+      .filter((obj) =>
+        obj?.title?.toLowerCase().includes((searchValue || "").toLowerCase())
+      )
+      .map((obj) => <PizzaBlock key={obj.id} {...obj} />)
+  : "По вашему запросу ничего не нашлось ):";
+
   const skeletons = [...new Array(6)].map((_, index) => (
     <Skeleton key={index} />
   ));
