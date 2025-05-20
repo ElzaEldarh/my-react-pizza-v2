@@ -5,6 +5,7 @@ import { clearItem } from "../redux/slices/cartSlice";
 import CartPageLogoSvg from "../assets/svg/cartPageLogoSvg";
 import TrashSvg from "../assets/svg/trashSvg";
 import BackToHomePageSvg from "../assets/svg/backToHomePageSvg";
+import CartEmpty from "../components/cartEmpty";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -16,6 +17,10 @@ const Cart = () => {
       dispatch(clearItem());
     }
   };
+
+  if (!totalPrice) {
+    return <CartEmpty />;
+  }
 
   return (
     <div className="container container--cart">
