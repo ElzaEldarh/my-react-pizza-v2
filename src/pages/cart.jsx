@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import CartItem from "../components/cartItem";
-import { clearItem } from "../redux/slices/cartSlice";
+import { clearItem, selectCart } from "../redux/slices/cartSlice";
 import CartPageLogoSvg from "../assets/svg/cartPageLogoSvg";
 import TrashSvg from "../assets/svg/trashSvg";
 import BackToHomePageSvg from "../assets/svg/backToHomePageSvg";
@@ -9,7 +9,7 @@ import CartEmpty from "../components/cartEmpty";
 
 const Cart = () => {
   const dispatch = useDispatch();
-  const { totalPrice, items } = useSelector((state) => state.cartSlice);
+  const { totalPrice, items } = useSelector(selectCart);
   const totalCount = items.reduce((sum, item) => sum + item.count, 0);
 
   const onClickClear = () => {

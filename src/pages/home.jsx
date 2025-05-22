@@ -4,29 +4,27 @@ import PizzaBlock from "../components/PizzaBlock/index";
 import Skeleton from "../components/PizzaBlock/skeleton";
 import { useEffect, useState, useContext, useRef } from "react";
 import Pagination from "../components/Pagination";
-import { SearchContext } from "../App";
 import { useDispatch, useSelector } from "react-redux";
 
 import qs from "qs";
 import { useNavigate } from "react-router-dom";
 import {
+  selectFilter,
   setCategoryId,
   setCurrentPage,
   setFilters,
 } from "../redux/slices/filterSlice";
-import { fetchPizzas } from "../redux/slices/pizzaSlice";
+import { fetchPizzas, selectPizzaData } from "../redux/slices/pizzaSlice";
 
 const Home = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const isSearch = useRef(false);
   const isMounted = useRef(false);
-  const { categoryId, sort, currentPage } = useSelector(
-    (state) => state.filterSlice
-  );
-  const { items, status } = useSelector((state) => state.pizzaSlice);
+  const { categoryId, sort, currentPage,searchValue } = useSelector(selectFilter);
+  const { items, status } = useSelector(selectPizzaData);
 
-  const { searchValue } = useContext(SearchContext);
+
 
   const onChangeCategory = (id) => {
     dispatch(setCategoryId(id));

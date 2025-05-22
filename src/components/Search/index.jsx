@@ -1,25 +1,27 @@
 import { useCallback, useContext, useRef } from "react";
-import { SearchContext } from "../../App";
 import debounce from "lodash.debounce";
 import styles from "./search.module.scss";
 import { useState } from "react";
 import SearchPizzaSvg from "../../assets/svg/searchPizzaSvg";
 import ClearSearchSvg from "../../assets/svg/clearSearchSvg";
+import { setSearchValue } from "../../redux/slices/filterSlice";
+import { useDispatch } from "react-redux";
 
 const Search = () => {
+  const dispatch = useDispatch();
   const [value, setValue] = useState("");
-  const { setSearchValue } = useContext(SearchContext);
   const inputRef = useRef();
 
   const onClickClear = () => {
-    setSearchValue("");
+
+    dispatch(setSearchValue(""));
     setValue("");
     inputRef.current.focus();
   };
 
   const updateSearchValue = useCallback(
     debounce((str) => {
-      setSearchValue(str);
+      dispatch(setSearchValue(str));
     }, 250),
     []
   );
@@ -39,9 +41,7 @@ const Search = () => {
         className={styles.input}
         placeholder="Поиск пиццы..."
       />
-      {value && (
-       <ClearSearchSvg onClick={onClickClear} />
-      )}
+      {value && <ClearSearchSvg onClick={onClickClear} />}
     </div>
   );
 };
