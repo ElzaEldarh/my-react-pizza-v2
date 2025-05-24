@@ -2,12 +2,12 @@ import Categories from "../components/categories";
 import Sort, { lists } from "../components/sort";
 import PizzaBlock from "../components/PizzaBlock/index";
 import Skeleton from "../components/PizzaBlock/skeleton";
-import { useEffect, useState, useContext, useRef } from "react";
+import { useEffect,  useRef } from "react";
 import Pagination from "../components/Pagination";
 import { useDispatch, useSelector } from "react-redux";
 
 import qs from "qs";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   selectFilter,
   setCategoryId,
@@ -21,10 +21,9 @@ const Home = () => {
   const dispatch = useDispatch();
   const isSearch = useRef(false);
   const isMounted = useRef(false);
-  const { categoryId, sort, currentPage,searchValue } = useSelector(selectFilter);
+  const { categoryId, sort, currentPage, searchValue } =
+    useSelector(selectFilter);
   const { items, status } = useSelector(selectPizzaData);
-
-
 
   const onChangeCategory = (id) => {
     dispatch(setCategoryId(id));
@@ -89,7 +88,11 @@ const Home = () => {
         .filter((obj) =>
           obj?.title?.toLowerCase().includes((searchValue || "").toLowerCase())
         )
-        .map((obj) => <PizzaBlock key={obj.id} {...obj} />)
+        .map((obj) => (
+          <Link key={obj.id} to={`/pizza/${obj.id}`}>
+            <PizzaBlock {...obj} />
+          </Link>
+        ))
     : "По вашему запросу ничего не нашлось ):";
 
   const skeletons = [...new Array(6)].map((_, index) => (
