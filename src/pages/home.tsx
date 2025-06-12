@@ -2,7 +2,7 @@ import Categories from "../components/categories";
 import Sort, { lists } from "../components/sort";
 import PizzaBlock from "../components/PizzaBlock/index";
 import Skeleton from "../components/PizzaBlock/skeleton";
-import { useEffect,  useRef } from "react";
+import { FC, useEffect, useRef } from "react";
 import Pagination from "../components/Pagination";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -16,7 +16,7 @@ import {
 } from "../redux/slices/filterSlice";
 import { fetchPizzas, selectPizzaData } from "../redux/slices/pizzaSlice";
 
-const Home = () => {
+const Home: FC = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const isSearch = useRef(false);
@@ -25,17 +25,18 @@ const Home = () => {
     useSelector(selectFilter);
   const { items, status } = useSelector(selectPizzaData);
 
-  const onChangeCategory = (id) => {
+  const onChangeCategory = (id:number) => {
     dispatch(setCategoryId(id));
   };
 
-  const onChangeCurrentPage = (number) => {
+  const onChangeCurrentPage = (number:number) => {
     dispatch(setCurrentPage(number));
   };
 
   const getPizzas = async () => {
     const search = searchValue ? `&search=${searchValue}` : "";
     dispatch(
+      //@ts-ignore
       fetchPizzas({
         search,
         categoryId,

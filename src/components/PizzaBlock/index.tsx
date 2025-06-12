@@ -1,9 +1,18 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem, selectcartItemById } from "../../redux/slices/cartSlice";
 import AddPizzaSvg from "../../assets/svg/addPizzaSvg";
 
-const PizzaBlock = ({ id, title, price, imageUrl, sizes, types }) => {
+type PizzaBlockProps = {
+  id: string;
+  title: string;
+  price: number;
+  imageUrl: string;
+  sizes: any;
+  types: number;
+};
+
+const PizzaBlock:FC<PizzaBlockProps> = ({ id, title, price, imageUrl, sizes, types }) => {
   const dispatch = useDispatch();
   const cartItem = useSelector(selectcartItemById(id));
   const [activeSize, setActiveSize] = useState(0);
