@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectSort, setSort } from "../redux/slices/filterSlice";
 import SortLabelSvg from "../assets/svg/sortLabelSvg";
+import { MouseEvent } from "react";
 
 type ListItem = {
   name: string;
@@ -27,8 +28,8 @@ const Sort = () => {
   };
 
   useEffect(() => {
-    const handleClickOutside = (event: any) => {
-      if (sortRef.current && !event.composedPath().includes(sortRef.current)) {
+    const handleClickOutside = (event: Event) => {
+      if (sortRef.current && !sortRef.current.contains(event.target as Node)) {
         setOpen(false);
       }
     };
