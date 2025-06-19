@@ -1,21 +1,21 @@
 import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectSort, setSort } from "../redux/slices/filterSlice";
+import { selectSort, setSort, Sort, SortPropertyEnum } from "../redux/slices/filterSlice";
 import SortLabelSvg from "../assets/svg/sortLabelSvg";
-import { MouseEvent } from "react";
+
 
 type ListItem = {
   name: string;
-  sortProperty: string;
+  sortProperty:SortPropertyEnum;
 };
 
 export const lists: ListItem[] = [
-  { name: "популярности", sortProperty: "rating" },
-  { name: "цене", sortProperty: "price" },
-  { name: "алфавиту", sortProperty: "title" },
+  { name: "популярности", sortProperty: SortPropertyEnum.RATING },
+  { name: "цене", sortProperty: SortPropertyEnum.PRICE },
+  { name: "алфавиту", sortProperty: SortPropertyEnum.TITLE },
 ];
 
-const Sort = () => {
+const SortPopup = () => {
   const dispatch = useDispatch();
   const sort = useSelector(selectSort);
   const sortRef = useRef<HTMLDivElement>(null);
@@ -68,4 +68,4 @@ const Sort = () => {
     </div>
   );
 };
-export default Sort;
+export default SortPopup;

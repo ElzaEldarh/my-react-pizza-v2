@@ -6,6 +6,7 @@ import {
   selectcartItemById,
 } from "../../redux/slices/cartSlice";
 import AddPizzaSvg from "../../assets/svg/addPizzaSvg";
+import { Link } from "react-router-dom";
 
 type PizzaBlockProps = {
   id: string;
@@ -13,7 +14,7 @@ type PizzaBlockProps = {
   price: number;
   imageUrl: string;
   sizes: any;
-  types: number;
+  types: number[];
 };
 
 const PizzaBlock: FC<PizzaBlockProps> = ({
@@ -48,8 +49,9 @@ const PizzaBlock: FC<PizzaBlockProps> = ({
   return (
     <div className="pizza-block-wrapper">
       <div className="pizza-block">
-        <img className="pizza-block__image" src={imageUrl} alt="Pizza" />
+       <Link key={id} to={`/pizza/${id}`}> <img className="pizza-block__image" src={imageUrl} alt="Pizza" />
         <h4 className="pizza-block__title">{title}</h4>
+        </Link>
         <div className="pizza-block__selector">
           <ul>
             {Array.isArray(types) &&
