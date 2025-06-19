@@ -19,19 +19,25 @@ export type SearchPizzaParams = {
   sort: Sort;
 };
 
-export const fetchPizzas = createAsyncThunk<Pizza[], FetchPizzasParams>(
-  "pizza/fetchPizzasStatus",
-  async ({ search, currentPage, categoryId, sort }) => {
-    const queryString = `https://67fd003b3da09811b1744c6c.mockapi.io/pizzas?page=${currentPage}&limit=4${
+export const fetchPizzas = createAsyncThunk<
+  Pizza[],
+  {
+    searchValue: string;
+    currentPage: number;
+    categoryId: number;
+    sort: Sort;
+  }
+>("pizza/fetchPizzasStatus", async (params) => {
+  const { searchValue, currentPage, categoryId, sort } = params;
+  const res = await axios.get(
+    `https://67fd003b3da09811b1744c6c.mockapi.io/pizzas?page=${currentPage}&limit=4${
       categoryId > 0 ? `&category=${categoryId}` : ""
     }&sortBy=${sort.sortProperty}&order=desc${
-      search ? `&search=${search}` : ""
-    }`;
-
-    const res = await axios.get<Pizza[]>(queryString);
-    return res.data;
-  }
-);
+      searchValue ? `&search=${searchValue}` : ""
+    }`
+  );
+  return res.data;
+});
 
 type Pizza = {
   id: string;

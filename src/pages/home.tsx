@@ -2,7 +2,7 @@ import Categories from "../components/categories";
 import Sort, { lists } from "../components/sort";
 import PizzaBlock from "../components/PizzaBlock/index";
 import Skeleton from "../components/PizzaBlock/skeleton";
-import { FC, useEffect, useRef } from "react";
+import { FC, useCallback, useEffect, useRef } from "react";
 import Pagination from "../components/Pagination";
 import { useSelector } from "react-redux";
 
@@ -31,26 +31,28 @@ const Home: FC = () => {
     useSelector(selectFilter);
   const { items, status } = useSelector(selectPizzaData);
 
-  const onChangeCategory = (id: number) => {
+
+  const onChangeCategory = useCallback((id: number) => {
     dispatch(setCategoryId(id));
-  };
+  }, []);
+
 
   const onChangeCurrentPage = (number: number) => {
     dispatch(setCurrentPage(number));
   };
 
   const getPizzas = async () => {
-    const search = searchValue ? `&search=${searchValue}` : "";
-    dispatch(
-      fetchPizzas({
-        search,
-        categoryId,
-        currentPage,
-        sort,
-      })
-    );
-    window.scrollTo(0, 0);
-  };
+  dispatch(
+    fetchPizzas({
+      searchValue,
+      categoryId,
+      currentPage,
+      sort,
+    })
+  );
+  window.scrollTo(0, 0);
+};
+
 
   // useEffect(() => {
   //   if (window.location.search) {
@@ -100,11 +102,7 @@ const Home: FC = () => {
         .filter((obj) =>
           obj?.title?.toLowerCase().includes((searchValue || "").toLowerCase())
         )
-        .map((obj) => (
-          
-            <PizzaBlock {...obj} />
-        
-        ))
+        .map((obj) => <PizzaBlock key={obj.id} {...obj} />)
     : "По вашему запросу ничего не нашлось ):";
 
   const skeletons = [...new Array(6)].map((_, index) => (
@@ -118,7 +116,7 @@ const Home: FC = () => {
           categoryId={categoryId}
           onChangeCategory={onChangeCategory}
         />
-        <Sort />
+        <Sort value={sort}/>
       </div>
       <h2 className="content__title">Все пиццы</h2>
       {status === "error" ? (

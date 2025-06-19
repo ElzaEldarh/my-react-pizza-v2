@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, useCallback, useContext, useRef } from "react";
+import { ChangeEvent, FC, useCallback, useRef } from "react";
 import debounce from "lodash.debounce";
 import styles from "./search.module.scss";
 import { useState } from "react";
