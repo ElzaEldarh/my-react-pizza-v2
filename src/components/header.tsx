@@ -3,6 +3,7 @@ import Search from "./Search";
 import { useSelector } from "react-redux";
 import CartLogoSvg from "../assets/svg/cartLogoSvg";
 import { selectCart } from "../redux/slices/cartSlice";
+import { useEffect, useRef } from "react";
 
 const Header = () => {
   const { items, totalPrice } = useSelector(selectCart);
@@ -11,6 +12,19 @@ const Header = () => {
     0
   );
   const location = useLocation();
+  const isMounted = useRef(false);
+
+useEffect(() => {
+  if (isMounted.current) {
+    const json = JSON.stringify({
+      items,
+      totalPrice,
+    });
+    localStorage.setItem("cart", json);
+  }
+  isMounted.current = true;
+}, [items, totalPrice]); 
+
 
   return (
     <div className="header">
